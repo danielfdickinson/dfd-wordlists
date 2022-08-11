@@ -49,8 +49,8 @@ repos:
       - id: mixed-line-ending
         # replaces or checks mixed line ending.
         args: [--fix=no]
-      # - id: no-commit-to-branch # - don"t commit to branch
-      #   args: [--branch, main, --branch, "v0.[0-9]"]
+      - id: no-commit-to-branch # - don"t commit to branch
+        args: [--branch, main, --branch, "v0.[0-9]"]
       - id: pretty-format-json
         # - Checks that all your JSON files are pretty. "Pretty"
         # here means that keys are sorted and indented.
@@ -95,20 +95,15 @@ repos:
         args: [-c=./tests/config/yamllint.yaml]
         exclude: ^(_vendor|.github/workflows|.pre-commit-config.yaml)
 
-  # - repo: "https://github.com/jumanjihouse/pre-commit-hooks"
-  #  rev: "2.1.6"
-  #  hooks:
-  #    - id: protect-first-parent
-
   - repo: "https://github.com/zricethezav/gitleaks"
     rev: v8.8.4
     hooks:
       - id: gitleaks
 
-  # - repo: "https://github.com/jorisroovers/gitlint"
-  #  rev: v0.17.0
-  #  hooks:
-  #    - id: gitlint
+  - repo: "https://github.com/jorisroovers/gitlint"
+    rev: v0.17.0
+    hooks:
+      - id: gitlint
 
   - repo: "https://github.com/editorconfig-checker/editorconfig-checker.python"
     rev: "2.4.0"
@@ -116,14 +111,12 @@ repos:
       - id: editorconfig-checker
         alias: ec
         exclude: ^(LICENSE)
-        # yamllint disable rule:line-length
-        # - repo: https://github.com/streetsidesoftware/cspell-cli
-        #   rev: v6.5.0
-        #   hooks:
-        #     - id: cspell
-        #         args: ["--config", "./tets/config/cspell.json", --locale", "en-GB", "--gitignore", "--gitignore-root"]
-        #         files: ^content
-        # yamllint enable
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v6.5.0
+    hooks:
+      - id: cspell
+        args: ["--config", "./tets/config/cspell.json", --locale", "en-GB", "--gitignore", "--gitignore-root"]
+        files: ^(.*.md)
 
 fail_fast: true
 minimum_pre_commit_version: 2.18.1
