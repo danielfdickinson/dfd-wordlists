@@ -2,6 +2,10 @@
 
 Daniel's word lists for [https://cspell.org] custom dictionaries.
 
+## Status
+
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/danielfdickinson/dfd-wordlists/main.svg)](https://results.pre-commit.ci/latest/github/danielfdickinson/dfd-wordlists/main)
+
 ## Currently includes
 
 * [Technology (especially computing) words Daniel needs CSpell to recognize (words-tech.txt)](words-tech.txt)
