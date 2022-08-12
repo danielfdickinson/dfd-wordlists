@@ -1,5 +1,5 @@
 # yamllint disable rule:line-length
-# Mostly copied from https://github.com/davidsneighbour/kollitsch.dev/blob/main/tests/config/yamllint.yaml
+# Initially copied from https://github.com/davidsneighbour/kollitsch.dev/blob/main/tests/config/yamllint.yaml
 # yamllint enable
 extends: default
 

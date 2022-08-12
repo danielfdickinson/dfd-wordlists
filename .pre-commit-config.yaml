@@ -1,7 +1,7 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 # yamllint disable rule:line-length
-# Mostly copied from https://github.com/davidsneighbour/kollitsch.dev/blob/main/.pre-commit-config.yaml
+# Initially copied from https://github.com/davidsneighbour/kollitsch.dev/blob/main/.pre-commit-config.yaml
 # yamllint enable
 ci:
   autofix_prs: false
