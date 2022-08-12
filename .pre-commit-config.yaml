@@ -43,9 +43,6 @@ repos:
       # files with a content of a path which that symlink was pointing to.
       - id: detect-private-key
       # - detects the presence of private keys.
-      # - id: end-of-file-fixer
-      # # - ensures that a file is either empty, or ends with one newline.
-      #   exclude: ^(layouts/|_vendor)
       - id: file-contents-sorter
         files: ^(words-.*.txt)
         args: ["--unique"]
@@ -56,7 +53,7 @@ repos:
       - id: mixed-line-ending
         # replaces or checks mixed line ending.
         args: [--fix=no]
-      - id: no-commit-to-branch # - don"t commit to branch
+      - id: no-commit-to-branch # - don't commit to branch
         args: [--branch, main, --branch, "v0.[0-9]"]
       - id: pretty-format-json
         # - Checks that all your JSON files are pretty. "Pretty"

@@ -1,9 +1,5 @@
 /public/
 /resources/
 node_modules
-check-links.log
-.hugo_build.lock
-html-validate.log
-hugo-audit.log
-md-lint.log
-themes
+*.log
+*.lock
