@@ -114,12 +114,13 @@ repos:
       - id: editorconfig-checker
         alias: ec
         exclude: ^(LICENSE)
+
   - repo: "https://github.com/streetsidesoftware/cspell-cli"
     rev: v6.5.0
     hooks:
       - id: cspell
-        args: ["--config", "./tets/config/cspell.json", --locale", "en-GB", "--gitignore", "--gitignore-root"] # yamllint disable-line
-        files: ^(.*.md)
+        args: ["--config", "tests/config/cspell.json", "--locale", "en-GB", "--gitignore", "--gitignore-root", "--no-cache"]
+        files: ^(.+\.md$)
 
 fail_fast: true
 minimum_pre_commit_version: 2.18.1

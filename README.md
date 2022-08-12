@@ -40,7 +40,7 @@ In your `cspell.json` configuration file include something like the following:
 ]
 ```
 
-Where `words-project.txt` is a file containing words specifict to the
+Where `words-project.txt` is a file containing words specific to the
 repository (project) and exists in the root of that repository.
 
 --------

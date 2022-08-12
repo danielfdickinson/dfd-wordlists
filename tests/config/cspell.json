@@ -10,17 +10,17 @@
 		{
 			"addWords": true,
 			"name": "project-words",
-			"path": "./words-project.txt"
+			"path": "../../words-project.txt"
 		},
 		{
 			"addWords": true,
 			"name": "tech-words",
-			"path": "./words-tech.txt"
+			"path": "../../words-tech.txt"
 		},
 		{
 			"addWords": true,
 			"name": "dfd-words",
-			"path": "./words-dfd.txt"
+			"path": "../../words-dfd.txt"
 		}
 	],
 	"ignorePaths": [
