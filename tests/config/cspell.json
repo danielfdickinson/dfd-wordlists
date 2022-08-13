@@ -25,7 +25,8 @@
 	],
 	"ignorePaths": [
 		"node_modules",
-		"/*-words.txt"
+		"/*-words.txt",
+		"tests/config/words-*.txt"
 	],
 	"ignoreWords": [],
 	"version": "0.2"
