@@ -17,7 +17,10 @@ status](https://results.pre-commit.ci/badge/github/danielfdickinson/dfd-wordlist
 
 ## Using with CSpell
 
-In your `cspell.json` configuration file include something like the following:
+### Using the word lists served from GitHub
+
+In your `tests/config/cspell.json` configuration file include something like
+the following:
 
 ``` json
 "dictionaries": [
@@ -49,7 +52,56 @@ In your `cspell.json` configuration file include something like the following:
 ```
 
 Where `words-project.txt` is a file containing words specific to the
-repository (project) and exists in the root of that repository.
+repository (project) and exists in `tests/config/` directory.
+
+### Using a Git submodule
+
+1. Add the wordlists as a submodule under tests/config by executing the
+	following from the root of your repository.
+
+	``` bash
+	git submodule add --name dfd-wordlists -- https://github.com/danielfdickinson/dfd-wordlists tests/config/dfd-wordlists
+	```
+
+2. And, in your `tests/config/cspell.json` configuration file include something
+	like the following:
+
+``` json
+"dictionaries": [
+	"dfd-words",
+	"tech-words",
+	"project-words"
+],
+"dictionaryDefinitions": [
+	{
+		"addWords": true,
+		"name": "project-words",
+		"path": "./words-project.txt"
+	},
+	{
+		"addWords": true,
+		"name": "tech-words",
+		"path": "./dfd-wordlists/words-tech.txt"
+	},
+	{
+		"addWords": true,
+		"name": "dfd-words",
+		"path": "./dfd-wordlists/main/words-dfd.txt"
+	}
+],
+"ignorePaths": [
+	"node_modules",
+	"tests/config/words-*.txt"
+]
+```
+
+Where `words-project.txt` is a file containing words specific to the
+repository (project) and exists in `tests/config/` directory.
+
+## Executing CSpell
+
+Use `cspell --config tests/config/cspell.json …` (that is with any additional
+command line parameters) from the root of your project.
 
 --------
 
