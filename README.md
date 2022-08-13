@@ -1,6 +1,7 @@
 # Daniel's word lists
 
-Daniel's word lists for [https://cspell.org] custom dictionaries.
+Daniel's word lists for [https://cspell.org](https://cspell.org) custom
+dictionaries.
 
 ## Status
 
