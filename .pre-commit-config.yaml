@@ -79,8 +79,8 @@ repos:
     rev: v0.32.1
     hooks:
       - id: markdownlint
-        args: ["--config", "tests/config/markdownlint.yaml"]
-        files: .+\.(md|html)$
+        args: ["--config", "tests/config/markdownlint.json"]
+        files: .+\.(md|markdown)$
 
   - repo: "https://github.com/crate-ci/typos"
     rev: v1.8.1
