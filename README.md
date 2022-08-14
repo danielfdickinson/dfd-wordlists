@@ -102,6 +102,19 @@ repository (project) and exists in `tests/config/` directory.
 Use `cspell --config tests/config/cspell.json …` (that is with any additional
 command line parameters) from the root of your project.
 
+## A note on editor configuration
+
+Uses EditorConfig for an editor neutral default styling
+
+* Defaults to [using tabs where possible for accessibility
+reasons][tabaccess]
+* `root = false` so that the user can set their preferred (or required for
+accessibility reasons) rendering of the tabs via a `.editorconfig` file in
+a higher level directory, or their home directory. Not doing this defeats
+the purpose of using tabs vs. spaces.
+* `tab_width` is **not** set in this repository so that the user's config
+will be used. (See above).
+
 ## Copyright and licensing
 
 Copyright © 2022 Daniel F. Dickinson
@@ -140,3 +153,4 @@ want to, but this makes it clear you can use them on an "AS-IS" basis (i.e.
 please don't sue me if they break or cause breakage).
 
 [cspell]: https://cspell.org
+[tabaccess]: https://www.brycewray.com/posts/2022/06/accessibility-argument-tabs-spaces/
