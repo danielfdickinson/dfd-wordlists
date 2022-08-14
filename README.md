@@ -129,6 +129,10 @@ Thank you to '@davidsneighbour' for introducing me to
 [pre-commit](https://pre-commit.com) and whose configurations I have gleefully
 extended (for example adding [CSpell][cspell] for spell checking).
 
+Thank you to '@brycewray' for writing an excellent [article on the
+accessibility argument for tabs vs spaces in code][tabaccess]. Hopefully I
+haven't taken that _too_ far (_[Note 1](#note-1)_).
+
 -------
 
 ## Notes
