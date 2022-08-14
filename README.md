@@ -1,7 +1,6 @@
 # Daniel's word lists
 
-Daniel's word lists for [https://cspell.org](https://cspell.org) custom
-dictionaries.
+Daniel's word lists for [CSpell][cspell] custom dictionaries.
 
 ## Status
 
@@ -56,7 +55,7 @@ repository (project) and exists in `tests/config/` directory.
 
 ### Using a Git submodule
 
-1. Add the wordlists as a submodule under tests/config by executing the
+1. Add the word lists as a submodule under tests/config by executing the
 	following from the root of your repository.
 
 	``` bash
@@ -103,11 +102,41 @@ repository (project) and exists in `tests/config/` directory.
 Use `cspell --config tests/config/cspell.json …` (that is with any additional
 command line parameters) from the root of your project.
 
---------
+## Copyright and licensing
 
 Copyright © 2022 Daniel F. Dickinson
 
-Except where otherwise noted, this repository is licensed under the Creative
-Commons Attribution Share-Alike 4.0 International license.
+### Textual and media content
 
-See [LICENSE](LICENSE) in this repository.
+Except where otherwise noted, textual and media components in this repository
+are licensed under the Creative Commons Attribution Share-Alike 4.0
+International license. (Basically a 'share it forward' license).
+
+See [LICENSE-TEXT-MEDIA](LICENSE-TEXT-MEDIA) in this repository for
+that license.
+
+### Code and configuration
+
+Except where otherwise noted, and where applicable _([Note 1](#note-1))_, code
+and configurations in this repository are licensed under an MIT license.
+
+See [LICENSE-CODE-AND-CONFIGS](LICENSE-CODE-AND-CONFIGS) in this repository for
+that license.
+
+### Acknowledgements
+
+Thank you to '@davidsneighbour' for introducing me to
+[pre-commit](https://pre-commit.com) and whose configurations I have gleefully
+extended (for example adding [CSpell][cspell] for spell checking).
+
+-------
+
+## Notes
+
+### Note 1
+
+Configurations are not particularly copyrightable anyway, nor do I particularly
+want to, but this makes it clear you can use them on an "AS-IS" basis (i.e.
+please don't sue me if they break or cause breakage).
+
+[cspell]: https://cspell.org
