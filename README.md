@@ -102,19 +102,6 @@ repository (project) and exists in `tests/config/` directory.
 Use `cspell --config tests/config/cspell.json …` (that is with any additional
 command line parameters) from the root of your project.
 
-## A note on editor configuration
-
-Uses EditorConfig for an editor neutral default styling
-
-* Defaults to [using tabs where possible for accessibility
-reasons][tabaccess]
-* `root = false` so that the user can set their preferred (or required for
-accessibility reasons) rendering of the tabs via a `.editorconfig` file in
-a higher level directory, or their home directory. Not doing this defeats
-the purpose of using tabs vs. spaces.
-* `tab_width` is **not** set in this repository so that the user's config
-will be used. (See above).
-
 ## Copyright and licensing
 
 Copyright © 2022 Daniel F. Dickinson
@@ -130,7 +117,7 @@ that license.
 
 ### Code and configuration
 
-Except where otherwise noted, and where applicable _([Note 1](#note-1))_, code
+Except where otherwise noted, and where applicable _([Note 2](#note-2))_, code
 and configurations in this repository are licensed under an MIT license.
 
 See [LICENSE-CODE-AND-CONFIGS](LICENSE-CODE-AND-CONFIGS) in this repository for
@@ -147,6 +134,19 @@ extended (for example adding [CSpell][cspell] for spell checking).
 ## Notes
 
 ### Note 1
+
+Uses EditorConfig for an editor neutral default styling
+
+* Defaults to [using tabs where possible for accessibility
+reasons][tabaccess]
+* `root = false` so that the user can set their preferred (or required for
+accessibility reasons) rendering of the tabs via a `.editorconfig` file in
+a higher level directory, or their home directory. Not doing this defeats
+the purpose of using tabs vs. spaces.
+* `tab_width` is **not** set in this repository so that the user's config
+will be used. (See above).
+
+### Note 2
 
 Configurations are not particularly copyrightable anyway, nor do I particularly
 want to, but this makes it clear you can use them on an "AS-IS" basis (i.e.
