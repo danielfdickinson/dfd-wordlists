@@ -133,6 +133,6 @@ repos:
     - --gitignore-root
     - --no-cache
     - --no-must-find-files
-    exclude: ^(words-(dfd|project|tech).txt$|LICENSE|tests/config/cspell.json) # yamllint disable-line
+    exclude: ^(LICENSE-) # yamllint disable-line
 # yamllint enable rule:key-ordering
 ...
