@@ -193,6 +193,13 @@ Of course the [CSpell dictionary
 documentation](https://cspell.org/docs/dictionaries/) is the canonical place to
 go for details.
 
+#### Remote dictionaries overrides
+
+We don't repeat the docs for remote dictionaries, since the only change is that
+instead of using a local path (e.g. `../../words-fr-dfd.txt`), as with the Basic
+configuration, one uses a URL (e.g.
+`https://raw.githubusercontent.com/danielfdickinson/dfd-wordlists/main/words-fr-dfd.txt`)
+
 ## Executing CSpell
 
 Use `cspell --config tests/config/cspell.json …` (that is, with any additional
