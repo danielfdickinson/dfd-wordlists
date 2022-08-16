@@ -188,27 +188,27 @@ You can override the disabling of the french dictionary for certain paths,
 using an override section like the following:
 
 ``` json
-	"overrides": [
-		{
-			"dictionaries": [
-				"!dfd-words",
-				"!tech-words",
-				"!project-words",
-				"!!dfd-words-fr"
-				"!!project-words-fr"
-			],
-			"filename": "**/exampleSite/**/fr/**/*.md",
-			"language": "fr_CA"
-		},
-		{
-			"dictionaries": [
-				"!!dfd-words-fr",
-				"!!project-words-fr"
-			],
-			"filename": "**/{i18n/fr.toml,config.toml}",
-			"language": "*"
-		}
-	]
+"overrides": [
+	{
+		"dictionaries": [
+			"!dfd-words",
+			"!tech-words",
+			"!project-words",
+			"!!dfd-words-fr"
+			"!!project-words-fr"
+		],
+		"filename": "**/exampleSite/**/fr/**/*.md",
+		"language": "fr_CA"
+	},
+	{
+		"dictionaries": [
+			"!!dfd-words-fr",
+			"!!project-words-fr"
+		],
+		"filename": "**/{i18n/fr.toml,config.toml}",
+		"language": "*"
+	}
+]
 ```
 
 The first example uses only the french dictionaries and the second example uses
