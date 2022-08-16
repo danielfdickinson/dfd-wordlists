@@ -18,7 +18,7 @@
 			"addWords": true,
 			"locale": "fr_CA",
 			"name": "project-words-fr",
-			"path": ".words-fr-project.txt"
+			"path": "./words-fr-project.txt"
 		},
 		{
 			"addWords": true,
