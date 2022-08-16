@@ -28,9 +28,20 @@ Not yet created: it may never be.
 
 ## Using with CSpell
 
-### Basic
+And using the [pre-commit][precommit] configuration from
+[dfd-template][dfdtemplate], this repository, or similarly configured repo.
 
-#### Using the word lists served from GitHub
+Otherwise, if you are using CSpell standalone (that is running it
+from the command line), you will need to alter the paths in the documentation
+below (for instance, your `cspell.json` may be in a different location than
+`tests/config/cspell.json`). In that case you will need to [read the CSpell
+documentation][cspell].
+
+### Configure
+
+#### Basic
+
+##### Using the word lists served from GitHub
 
 In your `tests/config/cspell.json` configuration file include something like
 the following:
@@ -67,17 +78,17 @@ the following:
 Where `words-project.txt` is a file containing words specific to the
 repository (project) and exists in `tests/config/` directory.
 
-#### Using a Git submodule
+##### Using a Git submodule
 
-1. Add the word lists as a submodule under tests/config by executing the
-	following from the root of your repository.
+Add the word lists as a submodule under tests/config by executing the
+following from the root of your repository.
 
-	``` bash
-	git submodule add --name dfd-wordlists -- https://github.com/danielfdickinson/dfd-wordlists tests/config/dfd-wordlists
-	```
+``` bash
+git submodule add --name dfd-wordlists -- https://github.com/danielfdickinson/dfd-wordlists tests/config/dfd-wordlists
+```
 
-2. And, in your `tests/config/cspell.json` configuration file include something
-	like the following:
+And, in your `tests/config/cspell.json` configuration file include something
+like the following:
 
 ``` json
 "dictionaries": [
@@ -111,7 +122,7 @@ repository (project) and exists in `tests/config/` directory.
 Where `words-project.txt` is a file containing words specific to the
 repository (project) and exists in `tests/config/` directory.
 
-### Overriding default dictionaries
+#### Overriding default dictionaries
 
 Starting with a configuration such as the following (which includes disabled
 french dictionaries):
@@ -203,17 +214,38 @@ Of course the [CSpell dictionary
 documentation](https://cspell.org/docs/dictionaries/) is the canonical place to
 go for details.
 
-#### Remote dictionaries overrides
+##### Remote dictionaries overrides
 
 We don't repeat the docs for remote dictionaries, since the only change is that
 instead of using a local path (e.g. `../../words-fr-dfd.txt`), as with the Basic
 configuration, one uses a URL (e.g.
 `https://raw.githubusercontent.com/danielfdickinson/dfd-wordlists/main/words-fr-dfd.txt`)
 
-## Executing CSpell
+### Execute CSpell
+
+#### With `pre-commit`
+
+For the first time after re-configure CSpell, and with a [pre-commit][precommit]
+configuration like the one in this repository, and all changes committed or at
+least staged, execute:
+
+``` bash
+pre-commit run --all-files
+```
+
+You CSpell hook should run and spell check your files, except those in
+`exclude` in the `.pre-commit-hook.yaml` or `ignorePaths` in your `cspell.json`,
+unless you are also using the `files` setting in you `.pre-commit-hook.yaml`. In
+that case you will need read the docs and experiment.
+
+Normally the hook will simply run on changed files matching your patterns when
+you try to commit your changes.
+
+#### Standalone
 
 Use `cspell --config tests/config/cspell.json …` (that is, with any additional
-command line parameters, not literally `…`) from the root of your project.
+command line parameters, not literally `…`) from the root of your project,
+assuming your `cspell.json` is in the `tests/config` folder.
 
 ## Getting help, discussing, and/or modifying
 
@@ -230,3 +262,5 @@ command line parameters, not literally `…`) from the root of your project.
 * [Notes](docs/README-NOTES.md)
 
 [cspell]: https://cspell.org
+[dfdtemplate]: https://github.com/danielfdickinson/dfd-template
+[precommit]: https://pre-commit.com
