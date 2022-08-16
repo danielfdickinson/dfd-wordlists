@@ -91,33 +91,39 @@ And, in your `tests/config/cspell.json` configuration file include something
 like the following:
 
 ``` json
-"dictionaries": [
-	"dfd-words",
-	"tech-words",
-	"project-words"
-],
-"dictionaryDefinitions": [
-	{
-		"addWords": true,
-		"name": "project-words",
-		"path": "./words-project.txt"
-	},
-	{
-		"addWords": true,
-		"name": "tech-words",
-		"path": "./dfd-wordlists/words-tech.txt"
-	},
-	{
-		"addWords": true,
-		"name": "dfd-words",
-		"path": "./dfd-wordlists/main/words-dfd.txt"
-	}
-],
-"ignorePaths": [
-	"node_modules",
-	"**/tests/config/words-*.txt",
-	"**/tests/config/dfd-wordlists/**"
-]
+{
+	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+	"allowCompoundWords": false,
+	"dictionaries": [
+		"dfd-words",
+		"tech-words",
+		"project-words"
+	],
+	"dictionaryDefinitions": [
+		{
+			"addWords": true,
+			"name": "project-words",
+			"path": "./words-project.txt"
+		},
+		{
+			"addWords": true,
+			"name": "tech-words",
+			"path": "./dfd-wordlists/words-tech.txt"
+		},
+		{
+			"addWords": true,
+			"name": "dfd-words",
+			"path": "./dfd-wordlists/main/words-dfd.txt"
+		}
+	],
+	"ignorePaths": [
+		"node_modules",
+		"**/tests/config/words-*.txt",
+		"**/tests/config/dfd-wordlists/**"
+	],
+	"ignoreWords": [],
+	"version": "0.2"
+}
 ```
 
 Where `words-project.txt` is a file containing words specific to the
