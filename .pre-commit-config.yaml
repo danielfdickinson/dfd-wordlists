@@ -21,26 +21,15 @@ repos:
   - id: check-case-conflict
   # - checks for files that would conflict in
   #   case-insensitive filesystems.
-  - id: check-docstring-first
-  # - checks a common error of defining a docstring after code.
-  - id: check-executables-have-shebangs
-  # - ensures that (non-binary) executables have a shebang.
   - id: check-json
     # - checks json files for parseable syntax.
     exclude: ^(layouts/|.vscode/|_vendor)
-  - id: check-shebang-scripts-are-executable
-  # - ensures that (non-binary) files with a shebang are executable.
   - id: check-merge-conflict
   # - checks for files that contain merge conflict strings.
   - id: check-symlinks
   # - checks for symlinks which do not point to anything.
-  - id: check-toml
-  # - checks toml files for parseable syntax.
   - id: check-vcs-permalinks
   # - ensures that links to vcs websites are permalinks.
-  - id: check-xml
-    # - checks xml files for parseable syntax.
-    exclude: ^(layouts/|_vendor)
   - id: check-yaml
   # - checks yaml files for parseable syntax.
   - id: destroyed-symlinks
@@ -71,18 +60,6 @@ repos:
   - id: trailing-whitespace
     exclude: ^(_vendor)
     args: [--markdown-linebreak-ext=md]
-
-- repo: "https://github.com/pre-commit/mirrors-csslint"
-  rev: bd680e135364dd60657e61913ad8cdbb7cac9bfc
-  # See https://github.com/CSSLint/csslint
-  hooks:
-  - id: csslint
-
-- repo: "https://github.com/pre-commit/mirrors-scss-lint"
-  rev: a1e830845a5c031d382ba4f8447454f0552d7756
-  # See https://github.com/causes/scss-lint
-  hooks:
-  - id: scss-lint
 
 - repo: "https://github.com/igorshubovych/markdownlint-cli"
   rev: v0.32.1
