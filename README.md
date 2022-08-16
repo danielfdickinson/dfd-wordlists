@@ -115,7 +115,8 @@ like the following:
 ],
 "ignorePaths": [
 	"node_modules",
-	"tests/config/words-*.txt"
+	"**/tests/config/words-*.txt",
+	"**/tests/config/dfd-wordlists/**"
 ]
 ```
 
@@ -148,28 +149,29 @@ french dictionaries):
 			"addWords": true,
 			"locale": "fr_CA",
 			"name": "project-words-fr",
-			"path": ".words-fr-project.txt"
+			"path": "./words-fr-project.txt"
 		},
 		{
 			"addWords": true,
 			"name": "tech-words",
-			"path": "../../words-tech.txt"
+			"path": "./dfd-wordlists/words-tech.txt"
 		},
 		{
 			"addWords": true,
 			"name": "dfd-words",
-			"path": "../../words-dfd.txt"
+			"path": "./dfd-wordlists/words-dfd.txt"
 		},
 		{
 			"addWords": true,
+			"locale": "fr_CA",
 			"name": "dfd-words-fr",
-			"path": "../../words-fr-dfd.txt"
+			"path": "./dfd-wordlists/words-fr-dfd.txt"
 		}
 	],
 	"ignorePaths": [
 		"node_modules",
 		"**/tests/config/words-*.txt",
-		"**/words-*.txt"
+		"**/tests/config/dfd-wordlists/**"
 	],
 	"ignoreWords": [],
 	"version": "0.2"
