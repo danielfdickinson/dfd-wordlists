@@ -2,12 +2,22 @@
 
 Daniel's word lists for [CSpell][cspell] custom dictionaries.
 
-## Status
+## Metadata
+
+### Status
 
 [![pre-commit.ci
 status](https://results.pre-commit.ci/badge/github/danielfdickinson/dfd-wordlists/main.svg)](https://results.pre-commit.ci/latest/github/danielfdickinson/dfd-wordlists/main)
 
-## Currently includes
+### Demo and/or documentation site or page
+
+Not yet created: it may never be.
+
+### Repository URL
+
+<https://github.com/danielfdickinson/dfd-wordlists>
+
+## Featured word lists
 
 * [Technology (especially computing) words Daniel needs CSpell to recognize
 (words-tech.txt)](words-tech.txt)
@@ -205,59 +215,18 @@ configuration, one uses a URL (e.g.
 Use `cspell --config tests/config/cspell.json …` (that is, with any additional
 command line parameters, not literally `…`) from the root of your project.
 
-## Copyright and licensing
+## Getting help, discussing, and/or modifying
 
-Copyright © 2022 Daniel F. Dickinson
-
-### Textual and media content
-
-Except where otherwise noted, textual and media components in this repository
-are licensed under the Creative Commons Attribution Share-Alike 4.0
-International license. (Basically a 'share it forward' license).
-
-See [LICENSE-TEXT-MEDIA](LICENSE-TEXT-MEDIA) in this repository for
-that license.
-
-### Code and configuration
-
-Except where otherwise noted, and where applicable _([Note 2](#note-2))_, code
-and configurations in this repository are licensed under an MIT license.
-
-See [LICENSE-CODE-AND-CONFIGS](LICENSE-CODE-AND-CONFIGS) in this repository for
-that license.
-
-### Acknowledgements
-
-Thank you to '@davidsneighbour' for introducing me to
-[pre-commit](https://pre-commit.com) and whose configurations I have gleefully
-extended (for example adding [CSpell][cspell] for spell checking).
-
-Thank you to '@brycewray' for writing an excellent [article on the
-accessibility argument for tabs vs spaces in code][tabaccess]. Hopefully I
-haven't taken that _too_ far (_[Note 1](#note-1)_).
+* [Support and general questions](docs/SUPPORT.md)
+* [Bugs and feature requests](docs/SUPPORT.md)
+* [Contributing modifications to the repository](docs/CONTRIBUTING.md)
 
 -------
 
-## Notes
+## Colophon
 
-### Note 1
-
-Uses EditorConfig for an editor neutral default styling
-
-* Defaults to [using tabs where possible for accessibility
-reasons][tabaccess]
-* `root = false` so that the user can set their preferred (or required for
-accessibility reasons) rendering of the tabs via a `.editorconfig` file in
-a higher level directory, or their home directory. Not doing this defeats
-the purpose of using tabs vs. spaces.
-* `tab_width` is **not** set in this repository so that the user's config
-will be used. (See above).
-
-### Note 2
-
-Configurations are not particularly copyrightable anyway, nor do I particularly
-want to, but this makes it clear you can use them on an "AS-IS" basis (i.e.
-please don't sue me if they break or cause breakage).
+* [Copyright and licensing](COPYING.md)
+* [Inspirations, information, and source material](docs/ACKNOWLEDGEMENTS.md)
+* [Notes](docs/README-NOTES.md)
 
 [cspell]: https://cspell.org
-[tabaccess]: https://www.brycewray.com/posts/2022/06/accessibility-argument-tabs-spaces/
