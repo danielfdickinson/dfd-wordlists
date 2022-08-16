@@ -45,8 +45,7 @@ repos:
   - id: forbid-new-submodules
   # - prevents addition of new git submodules.
   - id: mixed-line-ending
-    # replaces or checks mixed line ending.
-    args: [--fix=no]
+  # replaces or checks mixed line ending.
   - id: no-commit-to-branch # - don't commit to branch
     args:
     - --branch
@@ -95,7 +94,7 @@ repos:
   hooks:
   - id: editorconfig-checker
     alias: ec
-    exclude: ^(LICENSE|package(-lock)?.json$)
+    exclude: ^(LICENSE-|package(-lock)?.json$)
 
 - repo: "https://github.com/streetsidesoftware/cspell-cli"
   rev: v6.5.0
@@ -104,12 +103,15 @@ repos:
     args:
     - --config
     - tests/config/cspell.json
+    - --dot
     - --locale
     - en-GB
     - --gitignore
     - --gitignore-root
     - --no-cache
     - --no-must-find-files
+    - --show-context
+    - --show-suggestions
     exclude: ^(LICENSE-) # yamllint disable-line
 # yamllint enable rule:key-ordering
 ...
