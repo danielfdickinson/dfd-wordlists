@@ -2,70 +2,58 @@
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
 	"allowCompoundWords": false,
 	"dictionaries": [
-		"dfd-words",
-		"tech-words",
 		"project-words",
-		"!dfd-words-fr",
-		"!project-words-fr"
+		"project-words-fr",
+		"tech-words",
+		"hugo-words",
+		"dfd-words",
+		"dfd-words-fr"
 	],
 	"dictionaryDefinitions": [
 		{
 			"addWords": true,
 			"locale": "en,en-ca,en-gb,en-us",
 			"name": "project-words",
-			"path": "./words-project.txt"
+			"path": "./tests/config/words-project.txt"
 		},
 		{
 			"addWords": true,
 			"locale": "fr,fr-ca",
 			"name": "project-words-fr",
-			"path": "./words-fr-project.txt"
+			"path": "./tests/config/words-fr-project.txt"
 		},
 		{
 			"addWords": true,
 			"locale": "en,en-ca,en-gb,en-us",
 			"name": "tech-words",
-			"path": "../../words-tech.txt"
+			"path": "./words-tech.txt"
+		},
+		{
+			"addWords": true,
+			"locale": "en,en-ca,en-gb,en-us",
+			"name": "hugo-words",
+			"path": "./words-hugo.txt"
 		},
 		{
 			"addWords": true,
 			"locale": "en,en-ca,en-gb,en-us",
 			"name": "dfd-words",
-			"path": "../../words-dfd.txt"
+			"path": "./words-dfd.txt"
 		},
 		{
 			"addWords": true,
 			"locale": "fr,fr-ca",
 			"name": "dfd-words-fr",
-			"path": "../../words-fr-dfd.txt"
+			"path": "./words-fr-dfd.txt"
 		}
 	],
+	"globRoot": "../..",
 	"ignorePaths": [
 		"node_modules",
-		"**/tests/config/words-*.txt",
-		"**/words-*.txt"
+		"./tests/config/cspell.json",
+		"./tests/config/words-*.txt",
+		"./words-*.txt"
 	],
 	"ignoreWords": [],
-	"overrides": [
-		{
-			"dictionaries": [
-				"!dfd-words",
-				"!tech-words",
-				"!project-words",
-				"!!dfd-words-fr",
-				"!!project-words-fr"
-			],
-			"filename": "**/exampleSite/**/fr/**/*.md",
-			"language": "fr_CA"
-		},
-		{
-			"dictionaries": [
-				"!!dfd-words-fr",
-				"!!project-words-fr"
-			],
-			"filename": "**/{i18n/fr.toml,config.toml}",
-			"language": "*"
-		}
-	],
 	"version": "0.2"
 }

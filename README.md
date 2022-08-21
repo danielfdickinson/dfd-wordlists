@@ -38,46 +38,15 @@ below (for instance, your `cspell.json` may be in a different location than
 `tests/config/cspell.json`). In that case you will need to [read the CSpell
 documentation][cspell].
 
-### Configure
+### You may not need this repository
+
+Before using these custom dictionaries you should [read the documentation about
+using `cspell-dicts` dictionaries with `pre-commit`][cspell-extra] (currently
+exists as a pull request that is under review).
+
+### Configure custom CSpell dictionaries
 
 #### Basic
-
-##### Using the word lists served from GitHub
-
-In your `tests/config/cspell.json` configuration file include something like
-the following:
-
-``` json
-"dictionaries": [
-	"dfd-words",
-	"tech-words",
-	"project-words"
-],
-"dictionaryDefinitions": [
-	{
-		"addWords": true,
-		"name": "project-words",
-		"path": "./words-project.txt"
-	},
-	{
-		"addWords": true,
-		"name": "tech-words",
-		"path": "https://raw.githubusercontent.com/danielfdickinson/dfd-wordlists/main/words-tech.txt"
-	},
-	{
-		"addWords": true,
-		"name": "dfd-words",
-		"path": "https://raw.githubusercontent.com/danielfdickinson/dfd-wordlists/main/words-dfd.txt"
-	}
-],
-"ignorePaths": [
-	"node_modules",
-	"/project-words.txt"
-]
-```
-
-Where `words-project.txt` is a file containing words specific to the
-repository (project) and exists in `tests/config/` directory.
 
 ##### Using a Git submodule
 
@@ -95,32 +64,59 @@ like the following:
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
 	"allowCompoundWords": false,
-	"dictionaries": [
-		"dfd-words",
+	dictionaries: [
+		"project-words",
+		"project-words-fr",
+		"hugo-words",
 		"tech-words",
-		"project-words"
+		"dfd-words",
+		"dfd-words-fr"
 	],
 	"dictionaryDefinitions": [
 		{
 			"addWords": true,
+			"language": "en,en-ca,en-gb",
 			"name": "project-words",
-			"path": "./words-project.txt"
+			"path": "./tests/config/words-project.txt"
 		},
 		{
 			"addWords": true,
+			"language": "fr,fr-ca,fr-90",
+			"name": "project-words-fr",
+			"path": "./tests/config/words-fr-project.txt"
+		},
+		{
+			"addWords": true,
+			"language": "en,en-ca,en-gb",
+			"languageId": "hugo",
+			"name": "hugo-words",
+			"path": "./tests/config/dfd-wordlists/words-hugo.txt"
+		},
+		{
+			"addWords": true,
+			"language": "en,en-ca,en-gb",
 			"name": "tech-words",
-			"path": "./dfd-wordlists/words-tech.txt"
+			"path": "./tests/config/dfd-wordlists/words-tech.txt"
 		},
 		{
 			"addWords": true,
+			"language": "en,en-ca,en-gb",
 			"name": "dfd-words",
-			"path": "./dfd-wordlists/main/words-dfd.txt"
+			"path": "./tests/config/dfd-wordlists/words-dfd.txt"
+		},
+		{
+			"addWords": true,
+			"language": "fr,fr-ca,fr-90",
+			"name": "dfd-words-fr",
+			"path": "./tests/config/dfd-wordlists/words-fr-dfd.txt"
 		}
 	],
+	"globRoot: "../..",
 	"ignorePaths": [
 		"node_modules",
-		"**/tests/config/words-*.txt",
-		"**/tests/config/dfd-wordlists/**"
+		"./tests/config/cspell.json",
+		"./tests/config/words-*.txt",
+		"./tests/config/dfd-wordlists/**"
 	],
 	"ignoreWords": [],
 	"version": "0.2"
@@ -130,105 +126,11 @@ like the following:
 Where `words-project.txt` is a file containing words specific to the
 repository (project) and exists in `tests/config/` directory.
 
-#### Overriding default dictionaries
-
-Starting with a configuration such as the following (which includes disabled
-french dictionaries):
-
-``` json
-{
-	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-	"allowCompoundWords": false,
-	"dictionaries": [
-		"dfd-words",
-		"tech-words",
-		"project-words",
-		"!dfd-words-fr",
-		"!project-words-fr"
-	],
-	"dictionaryDefinitions": [
-		{
-			"addWords": true,
-			"name": "project-words",
-			"path": "./words-project.txt"
-		},
-		{
-			"addWords": true,
-			"locale": "fr_CA",
-			"name": "project-words-fr",
-			"path": "./words-fr-project.txt"
-		},
-		{
-			"addWords": true,
-			"name": "tech-words",
-			"path": "./dfd-wordlists/words-tech.txt"
-		},
-		{
-			"addWords": true,
-			"name": "dfd-words",
-			"path": "./dfd-wordlists/words-dfd.txt"
-		},
-		{
-			"addWords": true,
-			"locale": "fr_CA",
-			"name": "dfd-words-fr",
-			"path": "./dfd-wordlists/words-fr-dfd.txt"
-		}
-	],
-	"ignorePaths": [
-		"node_modules",
-		"**/tests/config/words-*.txt",
-		"**/tests/config/dfd-wordlists/**"
-	],
-	"ignoreWords": [],
-	"version": "0.2"
-}
-```
-
-You can override the disabling of the french dictionary for certain paths,
-using an override section like the following:
-
-``` json
-"overrides": [
-	{
-		"dictionaries": [
-			"!dfd-words",
-			"!tech-words",
-			"!project-words",
-			"!!dfd-words-fr"
-			"!!project-words-fr"
-		],
-		"filename": "**/exampleSite/**/fr/**/*.md",
-		"language": "fr_CA"
-	},
-	{
-		"dictionaries": [
-			"!!dfd-words-fr",
-			"!!project-words-fr"
-		],
-		"filename": "**/{i18n/fr.toml,config.toml}",
-		"language": "*"
-	}
-]
-```
-
-The first example uses only the french dictionaries and the second example uses
-all the dictionaries from the config sample.
-
-A single bang (`!`) disables a dictionary, a double-bang (`!!`) re-enables a
-disabled dictionary. You can even re-disable with a triple bang (`!!!`) but that
-gets confusing in my opinion.
+##### Alternative
 
 Of course the [CSpell dictionary
 documentation](https://cspell.org/docs/dictionaries/) is the canonical place to
 go for details.
-
-##### Remote dictionaries overrides
-
-We don't repeat the docs for remote dictionaries, since the only change is that
-instead of using a local path (e.g. `../../words-fr-dfd.txt`), as with the Basic
-configuration, one uses a URL (e.g.
-`https://raw.githubusercontent.com/danielfdickinson/dfd-wordlists/main/words-fr-dfd.txt`)
 
 ### Execute CSpell
 
@@ -271,5 +173,6 @@ assuming your `cspell.json` is in the `tests/config` folder.
 * [Notes](docs/README-NOTES.md)
 
 [cspell]: https://cspell.org
+[cspell-extra]: https://github.com/danielfdickinson/streetsidesoftware-cspell-cli/blob/document-using-extra-dicts-with-pre-commit/README.md
 [dfdtemplate]: https://github.com/danielfdickinson/dfd-template
 [precommit]: https://pre-commit.com
