@@ -64,7 +64,7 @@ like the following:
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
 	"allowCompoundWords": false,
-	dictionaries: [
+	"dictionaries": [
 		"project-words",
 		"project-words-fr",
 		"hugo-words",
@@ -111,7 +111,7 @@ like the following:
 			"path": "./tests/config/dfd-wordlists/words-fr-dfd.txt"
 		}
 	],
-	"globRoot: "../..",
+	"globRoot": "../..",
 	"ignorePaths": [
 		"node_modules",
 		"./tests/config/cspell.json",
