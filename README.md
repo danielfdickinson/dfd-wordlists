@@ -29,12 +29,11 @@ Not yet created: it may never be.
 
 ## Using with CSpell
 
-And using the [pre-commit][precommit] configuration from
-[dfd-template][dfdtemplate], this repository, or similarly configured repo.
+And the [pre-commit][precommit] configuration from [dfd-template][dfdtemplate],
+this repository, or similarly configured repo.
 
-Otherwise, if you are using CSpell standalone (that is running it
-from the command line), you will need to alter the paths in the documentation
-below (for instance, your `cspell.json` may be in a different location than
+Otherwise, you will need to alter the paths in the documentation below (for
+instance, your `cspell.json` may be in a different location than
 `tests/config/cspell.json`). In that case you will need to [read the CSpell
 documentation][cspell].
 
@@ -51,7 +50,7 @@ dictionaries](docs/readme-example-using-french-dictionaries.md)
 
 ##### Using a Git submodule
 
-Add the word lists as a submodule under tests/config by executing the
+Add the word lists as a submodule under `tests/config` by executing the
 following from the root of your repository.
 
 ``` bash
@@ -145,7 +144,7 @@ on filename and/or folder](docs/readme-excluding-frontmatter.md)
 
 #### With `pre-commit`
 
-For the first time after re-configure CSpell, and with a [pre-commit][precommit]
+For the first time after re-configuring CSpell, with a [pre-commit][precommit]
 configuration like the one in this repository, and all changes committed or at
 least staged, execute:
 
@@ -165,7 +164,8 @@ you try to commit your changes.
 
 Use `cspell --config tests/config/cspell.json …` (that is, with any additional
 command line parameters, not literally `…`) from the root of your project,
-assuming your `cspell.json` is in the `tests/config` folder.
+assuming your `cspell.json` is in the `tests/config` folder. (You of course
+must have `cspell-cli` installed on your system for this to work).
 
 ## Getting help, discussing, and/or modifying
 
