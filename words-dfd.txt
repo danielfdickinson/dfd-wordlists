@@ -24,6 +24,7 @@ dananke
 danielfdickinson
 davidsneighbour
 devuan
+dfd
 enps
 française
 freac
@@ -71,6 +72,7 @@ vcxsrv
 vultr
 waaaayyyy
 wildtechgarden
+wordlists
 wpxr
 youtube
 æons
