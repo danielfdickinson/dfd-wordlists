@@ -20,7 +20,7 @@ repos:
   # - Prevent giant files from being committed.
   - id: check-case-conflict
   # - checks for files that would conflict in
-  #   case-insensitive filesystems.
+  #   case-insensitive filesystems. # cspell:disable-line
   - id: check-json
     # - checks json files for parseable syntax.
     exclude: ^(layouts/|.vscode/|_vendor)
@@ -103,9 +103,6 @@ repos:
     args:
     - --config
     - tests/config/cspell.json
-    - --dot
-    - --locale
-    - en-GB
     - --gitignore
     - --gitignore-root
     - --no-cache
