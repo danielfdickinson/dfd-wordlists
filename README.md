@@ -44,7 +44,8 @@ Before using these custom dictionaries you should [read the documentation about
 using `cspell-dicts` dictionaries with `pre-commit`][cspell-extra] (currently
 exists as a pull request that is under review).
 
-### Configure custom CSpell dictionaries
+We also provide [an example configuration for using French
+dictionaries](docs/readme-example-using-french-dictionaries.md)
 
 #### Basic
 
@@ -128,9 +129,17 @@ repository (project) and exists in `tests/config/` directory.
 
 ##### Alternative
 
+[Using dfd-wordlists served from
+GitHub](docs/readme-using-dfd-wordlists-served-from-github.md)
+
 Of course the [CSpell dictionary
 documentation](https://cspell.org/docs/dictionaries/) is the canonical place to
 go for details.
+
+#### Excluding frontmatter
+
+Here is [a complete `cspell.json` for excluding and including frontmatter based
+on filename and/or folder](docs/readme-excluding-frontmatter.md)
 
 ### Execute CSpell
 
