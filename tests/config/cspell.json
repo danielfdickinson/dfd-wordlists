@@ -55,5 +55,6 @@
 		"./words-*.txt"
 	],
 	"ignoreWords": [],
+	"language": "en,en-ca,en-gb",
 	"version": "0.2"
 }
