@@ -19,6 +19,7 @@ Not yet created: it may never be.
 
 ## Featured word lists
 
+* [Hugo words Daniel needs CSpell to recognize (words-hugo.txt)](words-hugo.txt)
 * [Technology (especially computing) words Daniel needs CSpell to recognize
 (words-tech.txt)](words-tech.txt)
 * [Miscellaneous words Daniel needs CSpell to recognize

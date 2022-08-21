@@ -1,0 +1,13 @@
+Lastmod
+errorf
+frontmatter
+hugo
+lastmod
+pageref
+peaceiris
+plainify
+relref
+shortcode
+unminified
+warnf
+webp
