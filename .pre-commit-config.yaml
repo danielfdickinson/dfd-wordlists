@@ -100,7 +100,7 @@ repos:
     exclude: ^(LICENSE-|package(-lock)?.json$|docs/readme-example-using-french-dictionaries\.md$) # yamllint disable-line
 
 - repo: "https://github.com/streetsidesoftware/cspell-cli"
-  rev: v6.7.0
+  rev: v6.8.0
   hooks:
   - id: cspell
     args:
@@ -112,6 +112,7 @@ repos:
     - --no-must-find-files
     - --show-context
     - --show-suggestions
+    - --validate-directives
     exclude: ^(LICENSE-) # yamllint disable-line
 # yamllint enable rule:key-ordering
 ...
