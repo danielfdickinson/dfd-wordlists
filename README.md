@@ -2,6 +2,10 @@
 
 Daniel's word lists for [CSpell][cspell] custom dictionaries.
 
+## ARCHIVED
+
+This module is no longer maintained (archived for historical purposes), and will not receive updates, even security updates.
+
 ## Metadata
 
 ### Status
